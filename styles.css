@@ -199,12 +199,10 @@ h1{
 }
 #images {
     display: flex;
-    position: relative;
-    flex-direction: column;
-    align-items: center;
-    font-size: 20px;
-    font-family: 'Montserrat';    
-    margin: auto;
+    flex-wrap: wrap;
+    padding-top: 50px;
+    margin: 4%;
+    width: 90%;
 }
 .images-txt:hover{
     transform: scale(1.1);
@@ -218,6 +216,7 @@ h1{
     font-size: 20px;
     font-family: 'Montserrat';
     margin: auto;
+    width: 150px;
 }
 #texte{
     font-weight: 600px;
