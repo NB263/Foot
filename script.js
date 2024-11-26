@@ -40,7 +40,7 @@ navLinks.forEach(a => {
 // Carte intéractive
 var paths = document.querySelectorAll('path');
 paths.forEach(function (path) {
-    path.addEventListener('mouseenter', function () {
+    path.addEventListener('click', function () {
         document.querySelectorAll('.is-active').forEach(function(item){
             item.classList.remove('is-active');
         });
