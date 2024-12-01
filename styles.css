@@ -519,27 +519,38 @@ video{
     margin-top: 20px;
     font-family: 'Montserrat';
     text-align: center;
+    height: 80vh;
+    position: relative;
 }
 #stades{
     display: flex;
     flex-direction: row;
+    height: 100%;
+    position: relative;
 }
 #carte{
     width: 60%;
+    height: auto;
+    position: relative;
 }
 #images-stades{
     position: relative;
     width: 40%;
-    height: 100%;
+    height: auto;
 }
 .stade{
     display: flex;
     flex-direction: column;
     position: absolute;
-    align-items: center;
     opacity: 0;
 }
+.stade-images{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
 .stade img{
+    margin: auto;
     width: 60%;
     border-radius: 15px;
     border: 5px solid black;
@@ -556,11 +567,59 @@ path.is-active{
     margin-right: 3px;
     margin-top: 0px;
 }
+@media (min-width: 768px) and (max-width: 1024px) {
+    #meilleurs-stades {
+        height: 60vh;
+    }
+}
+@media (max-width: 768px) {
+    #meilleurs-stades {
+        height: 140vh;
+    }
+    #images-stades {
+        width: 100%;
+    }
+    #stades {
+        flex-direction: column;
+        align-items: center;
+    }
+    #carte {
+        width: 70%;
+    }
+    .stade {
+        height: 40vh;
+        width: 100%;
+    }
+    .stade img {
+        width: 40%;
+    }
+    .stade-images {
+        width: 100%;
+        flex-direction: row;
+    }
+}
+@media (max-width: 600px) {
+    #meilleurs-stades {
+        height: 105vh;
+    }
+    #carte {
+        width: 70%;
+    }
+    .stade {
+        height: 30vh;
+    }
+}
+@media (max-width: 350px) {
+    #carte {
+        width: 100%;
+    }
+}
 
 /*pied de page*/
 footer{
     display: flex;
     flex-direction: column-reverse;
+    position: relative;
     width: 100%;
     padding-top: 5px;
     justify-content: space-between;
