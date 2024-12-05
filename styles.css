@@ -178,6 +178,7 @@ h1{
     background-color: rgb(60, 60, 212);
     border-radius: 50%;
     opacity: 0.4;
+    z-index: 2;
 }
 #fleche img:hover{
     transform: scale(1.2);
@@ -519,8 +520,9 @@ video{
     margin-top: 20px;
     font-family: 'Montserrat';
     text-align: center;
-    height: 80vh;
+    height: auto;
     position: relative;
+    margin-bottom: 50px;
 }
 #stades{
     display: flex;
@@ -543,6 +545,9 @@ video{
     flex-direction: column;
     position: absolute;
     opacity: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
     transition: opacity 0.5s ease;
 }
 .stade-images{
@@ -568,16 +573,9 @@ path.is-active{
     margin-right: 3px;
     margin-top: 0px;
 }
-@media (min-width: 768px) and (max-width: 1024px) {
-    #meilleurs-stades {
-        height: 60vh;
-    }
-}
 @media (max-width: 768px) {
-    #meilleurs-stades {
-        height: 140vh;
-    }
     #images-stades {
+        height: 200px;
         width: 100%;
     }
     #stades {
@@ -585,10 +583,9 @@ path.is-active{
         align-items: center;
     }
     #carte {
-        width: 70%;
+        width: 85%;
     }
     .stade {
-        height: 40vh;
         width: 100%;
     }
     .stade img {
@@ -599,38 +596,73 @@ path.is-active{
         flex-direction: row;
     }
 }
-@media (max-width: 600px) {
-    #meilleurs-stades {
-        height: 105vh;
-    }
-    #carte {
-        width: 70%;
-    }
-    .stade {
-        height: 30vh;
-    }
-}
-@media (max-width: 350px) {
-    #carte {
-        width: 100%;
+@media (max-width: 500px){
+    #images-stades {
+        height: 150px;
     }
 }
 
 /*pied de page*/
 footer{
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     position: relative;
     width: 100%;
-    padding-top: 5px;
+    padding-top: 20px;
     justify-content: space-between;
     align-items: center;
     text-align: center;
     font-family: 'Roboto';
     margin-bottom: 0;
     padding-bottom: 0;
+    background-color: rgb(203, 203, 197);
+}
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    padding-top: 0px;
+    background: #f9f9f9;
+    border-radius: 5px;
+}
+form p{
+    margin: 20px;
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+}
+input, textarea {
+    border: 1px solid #CCCCCC;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    font-size: 15px;
+    font-family: 'Courier New', Courier, monospace;
+}
+textarea{
+    height: 100px;    
+    resize : none;
+}
+button {
+    padding: 0.7em;
+    color: #ffffff;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #0056b3;
 }
 footer img{    
     height: 40px;
     border-radius: 50%;
+    margin: 5px;
+    margin-bottom: 0;
+    margin-top: 20px;
+}
+footer img:hover{
+    transform: scale(1.1);
+    transition: 0.2s ease-in-out;
 }
