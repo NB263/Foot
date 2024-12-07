@@ -9,6 +9,11 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
     <script src="script.js" defer></script>
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript" defer>
+        (function() {
+            emailjs.init("NckNMUlbStHDjH9oT");
+        })();
+    </script>
 </head>
 
 <body>
@@ -911,7 +916,7 @@
                     </div>
                 </div>
                 <div class="slider-nav">
-                    <a href="#slide-1"></a>
+                    <a class="active" href="#slide-1"></a>
                     <a href="#slide-2"></a>
                     <a href="#slide-3"></a>
                     <a href="#slide-4"></a>
@@ -1103,22 +1108,8 @@
             <input type="text" name="fullName" placeholder="Ton nom" required>
             <input type="email" name="email_id" placeholder="Ton adresse e-mail" required>
             <textarea name="message" placeholder="Ton message" required></textarea>
-            <button type="submit">Envoyer</button>
+            <button type="submit" id="button">Envoyer</button>
         </form>
-        <script type="text/javascript" defer>
-            (function() {
-                emailjs.init("NckNMUlbStHDjH9oT");
-            })();
-            document.getElementById('contactForm').addEventListener('submit', function(event) {
-                event.preventDefault();
-                emailjs.sendForm('service_88dr7gf', 'template_ubnnltc', this)
-                .then(function() {
-                    alert('J\'ai bien reçu ton message, merci beaucoup ! J\'y réponds dès que possible !');
-                }, function(error) {
-                    alert('Aïe... Le texte n\'a pas pu être envoyé...');
-                });
-            });
-        </script>
         <div id="icones">
             <a href="https:/www.github.com/NB263/"><img src="images/Icones/github.png"></a>
             <a href="https://www.instagram.com/naim._b/"><img src="images/Icones/instagram.png"></a>
