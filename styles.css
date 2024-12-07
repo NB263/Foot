@@ -600,6 +600,9 @@ path.is-active{
     #images-stades {
         height: 150px;
     }
+    #carte {
+        width: 100%;
+    }
 }
 
 /*pied de page*/
@@ -618,12 +621,17 @@ footer{
     background-color: rgb(203, 203, 197);
 }
 form {
-    max-width: 500px;
+    width: 500px;
     margin: 0 auto;
     padding: 20px;
     padding-top: 0px;
     background: #f9f9f9;
     border-radius: 5px;
+}
+@media(max-width: 600px){
+    form{
+        width: 75%;
+    }
 }
 form p{
     margin: 20px;
