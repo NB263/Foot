@@ -54,11 +54,15 @@ paths.forEach(function (path) {
 
 
 // Form
+(function() {
+    emailjs.init("NckNMUlbStHDjH9oT");
+})();
 const btn = document.getElementById("button")
 document.getElementById('contactForm').addEventListener('submit', function(event) {
     event.preventDefault();
     emailjs.sendForm('service_88dr7gf', 'template_ubnnltc', this)
     .then(function() {
+        contactForm.reset();
         alert('J\'ai bien reçu ton message, merci beaucoup ! J\'y réponds dès que possible !');
     }, function(error) {
         alert('Aïe... Le texte n\'a pas pu être envoyé...');
