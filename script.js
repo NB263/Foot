@@ -49,3 +49,18 @@ paths.forEach(function (path) {
         document.getElementById(id).classList.add('is-active');
     });
 });
+
+
+
+
+// Form
+const btn = document.getElementById("button")
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    emailjs.sendForm('service_88dr7gf', 'template_ubnnltc', this)
+    .then(function() {
+        alert('J\'ai bien reçu ton message, merci beaucoup ! J\'y réponds dès que possible !');
+    }, function(error) {
+        alert('Aïe... Le texte n\'a pas pu être envoyé...');
+    });
+});
