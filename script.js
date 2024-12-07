@@ -52,19 +52,19 @@ paths.forEach(function (path) {
 
 
 
-
 // Form
-(function() {
-    emailjs.init("NckNMUlbStHDjH9oT");
-})();
+emailjs.init("NckNMUlbStHDjH9oT");
 const btn = document.getElementById("button")
 document.getElementById('contactForm').addEventListener('submit', function(event) {
+    btn.innerText = "Envoi...";
     event.preventDefault();
     emailjs.sendForm('service_88dr7gf', 'template_ubnnltc', this)
     .then(function() {
+        btn.innerText = "Envoyer";
         contactForm.reset();
         alert('J\'ai bien reçu ton message, merci beaucoup ! J\'y réponds dès que possible !');
     }, function(error) {
+        btn.innerText = "Envoyer";
         alert('Aïe... Le texte n\'a pas pu être envoyé...');
     });
 });
